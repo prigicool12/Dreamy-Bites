@@ -14,6 +14,7 @@ body {
     padding-top: 60px; /* Tambahan untuk mengimbangi navbar sticky */
 }
 
+/* Default Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -26,23 +27,34 @@ body {
     width: 100%; /* Lebar penuh */
     z-index: 1000; /* Navbar tetap berada di atas elemen lain */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek profesional */
+    transition: all 0.3s ease-in-out; /* Menambahkan transisi untuk animasi */
 }
 
-.logo a {
-    font-size: 1.8rem;
+/* Sticky Navbar - Setelah di-scroll */
+.sticky-navbar {
+    padding: 5px 10px; /* Padding lebih kecil saat sticky */
+    background-color: #2a9d8f; /* Warna navbar tetap */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Tambahkan bayangan lebih tebal saat sticky */
+}
+
+/* Logo Navbar */
+.navbar .logo a {
+    font-size: 1.3rem;
     font-weight: bold;
-    color: #fff; /* Warna teks logo */
+    color: #fff;
     text-decoration: none;
 }
 
+/* Menu Navbar */
 .menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     margin: 0;
     padding: 0;
 }
 
+/* Menu Link */
 .menu li a {
     text-decoration: none;
     font-size: 1rem;
@@ -51,40 +63,25 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Hover efek pada link menu */
 .menu li a:hover {
-    color: #f4a261; /* Warna saat hover */
+    color: #f4a261;
 }
 
-.navbar .logo img {
-    height: 40px;
+/* Ukuran font dan styling saat navbar sticky */
+.sticky-navbar .logo a {
+    font-size: 1.1rem; /* Ukuran logo lebih kecil */
 }
 
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.sticky-navbar .menu li a {
+    font-size: 0.9rem; /* Ukuran font menu lebih kecil */
 }
 
-.menu li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s;
+.sticky-navbar .menu {
+    gap: 10px; /* Mengurangi jarak antar item menu saat sticky */
 }
 
-.menu li a:hover {
-    color: #00bcd4;
-}
 
-/* Sticky Navbar on scroll */
-.sticky-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 /* Main Content */
 main {
@@ -314,7 +311,7 @@ main p {
 
 .portfolio-item img {
     width: 100%;
-    height: auto;
+    height: 300px;
     border-bottom: 2px solid #f4f4f4;
 }
 
@@ -445,7 +442,7 @@ main p {
     line-height: 1.8;
 }
 
-/* .contact-info {
+.contact-info {
     font-size: 1rem;
     margin-bottom: 20px;
     text-align: left;
@@ -479,7 +476,7 @@ main p {
 .social-media a:hover {
     color: #f4a261;
     text-decoration: underline;
-} */
+}
 
 /* CSS untuk WhatsApp Icon */
 .whatsapp-float {
