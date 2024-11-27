@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -75,6 +76,17 @@ body {
     color: #00bcd4;
 }
 
+/* Sticky Navbar on scroll */
+.sticky-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
 main {
     padding: 20px;
     text-align: center;
@@ -91,6 +103,7 @@ main p {
     margin: 0 auto;
 }
 
+/* About Us Section */
 .about-us-section {
     padding: 60px 20px;
     background-color: #f4f4f4;
@@ -133,7 +146,7 @@ main p {
     margin-bottom: 15px;
 }
 
-
+/* Services Section */
 .services-section {
     padding: 60px 20px;
     background-color: #f9f9f9;
@@ -167,6 +180,66 @@ main p {
     margin-top: 40px;
 }
 
+.service-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-box h3 {
+    color: #2a9d8f;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-box p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .about-us-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .about-us-images {
+        grid-template-columns: 1fr;
+    }
+
+    .services-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 .highlight-item {
     background-color: #fff;
     padding: 20px;
@@ -195,17 +268,20 @@ main p {
     line-height: 1.6;
 }
 
+/* Portofolio Section */
 .portfolio-section {
     padding: 60px 20px;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     text-align: center;
 }
 
+/* Container untuk portfolio */
 .portfolio-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Heading */
 .portfolio-container h1 {
     font-size: 2.8rem;
     color: #2a9d8f;
@@ -216,47 +292,70 @@ main p {
 .portfolio-container p {
     font-size: 1.1rem;
     color: #333;
-    margin-bottom: 40px;
     line-height: 1.8;
+    margin-bottom: 30px;
 }
 
+/* Grid Layout untuk item portfolio */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
+/* Portfolio Item */
 .portfolio-item {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    height: auto;
+    border-bottom: 2px solid #f4f4f4;
 }
 
 .portfolio-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin: 15px 0 10px;
     color: #2a9d8f;
-    margin-bottom: 10px;
 }
 
 .portfolio-item p {
     font-size: 1rem;
     color: #555;
+    padding: 0 15px 15px;
 }
 
-.portfolio-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+/* Responsif untuk ukuran layar lebih kecil (Tablet) */
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    }
 }
+
+/* Responsif untuk ukuran layar kecil (Handphone) */
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* 1 kolom */
+    }
+
+    .portfolio-container h1 {
+        font-size: 2rem; /* Ukuran font lebih kecil */
+    }
+
+    .portfolio-container p {
+        font-size: 1rem;
+    }
+
+    .portfolio-item h3 {
+        font-size: 1.1rem;
+    }
+}
+
 
 .team-section {
     padding: 60px 20px;
